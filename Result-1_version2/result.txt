@@ -1,0 +1,1 @@
+[(146, 'one'), (133, 'would'), (131, 'said'), (122, 'kurtz'), (120, 'like'), (114, 'man'), (111, 'could'), (95, 'see'), (93, 'gutenberg'), (89, 'know'), (87, 'project'), (78, 'time'), (76, 'work'), (69, 'seemed'), (67, 'made'), (65, 'back'), (63, 'came'), (62, 'little'), (61, 'though'), (60, 'river')]
