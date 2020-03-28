@@ -5,7 +5,7 @@
     2) Set the s3 bucket credentials (access key id and secret access key).
         *If you don't have these credentials, please follow the first part of this tutorial to get them https://realpython.com/python-boto3-aws-s3/
     3)Change the s3_bucket parameter to your bucket name
-    4) Set your dataset name as hosted oin your bucket (change the input_name parameter)
+    4) Set your dataset name as hosted on your bucket (change the input_name parameter)
 '''
 
 #Set the s3 credentials
@@ -23,13 +23,13 @@ model2 = 'https://log8415-tp2-ml.s3.amazonaws.com/model2.pkl' #Model 2: RandomFo
 model3 = 'https://log8415-tp2-ml.s3.amazonaws.com/model3.pkl' #Model 3: DecisionTreeClassifier. Don't change
 
 '''-------------------------------------------------------------------------'''
-import pip
+import pyspark
+from pyspark import SparkContext
+sc =SparkContext()
 print('------Installing required libraries------')
 def install(package_name):
   try:
-      pipcode = pip.main(['install', package_name])
-      if pipcode != 0:
-          print("Unable to install " + package_name + " ; pipcode %d" % pipcode)
+      sc.install_pypi_package(package_name)
   except:
       print(package_name + " is already installed")
 pkgs = ['wget', 'boto3', 'pandas', 'scikit-learn', 'pickle']
