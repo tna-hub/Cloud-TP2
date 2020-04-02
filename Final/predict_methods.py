@@ -17,15 +17,15 @@ Original file is located at
     4) Set your dataset name as hosted oin your bucket (change the input_name parameter)
 '''
 #Set the s3 credentials
-aws_key_id='AKIA2DAQ4CJ4ULEY5JGK', #Change here, set your s3 access key id
-aws_secret_key='YVY8EHcLvwfnJCdO4+03P+F+er8PM8OkN8FATHwJ', #Change here, set your s3 secret access key
+aws_key_id='', #Change here, set your s3 access key id
+aws_secret_key='', #Change here, set your s3 secret access key
 
 #Set the bucket and input file name
-s3_bucket = 'log8415-tp2-ml' #Change here, set your bucket name
-input_name = 'dataset.csv' #Change here. Set your csv input file name that will be predicted (file needs to be hosted on s3 bucket)
+s3_bucket = '' #Change here, set your bucket name
+input_name = '' #Change here. Set your csv input file name that will be predicted (file needs to be hosted on s3 bucket)
+output_name = '' #Change here. Set your csv output file for results after predicting
 
-#Don't change, these are the parameters asked by the assignment.
-output_name = 'result.csv' #Output file for results after predicting
+#Don't change, these are the models link parameters asked by the assignment.
 model1 = 'https://log8415-tp2-ml.s3.amazonaws.com/model1.sav' #Model 1: SVM. Don't change
 model2 = 'https://log8415-tp2-ml.s3.amazonaws.com/model2.sav' #Model 2: RandomForestRegressor. Don't change
 model3 = 'https://log8415-tp2-ml.s3.amazonaws.com/model3.sav' #Model 3: DecisionTreeRegressor. Don't change
