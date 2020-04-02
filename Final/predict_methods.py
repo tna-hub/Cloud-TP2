@@ -90,32 +90,32 @@ data['station'] = labelencoder.fit_transform(data['station'])
 print('DONE')
 
 print('   +Applying feature scalling for data normalization...', end ="   ")
-#Each column of norm_mean_dict is the mean of that column from the dataset used for training
-norm_mean_dict = {'CO': 1217,
-                  'DEWP': 2,
-                  'NO2': 50,
-                  'O3': 57,
-                  'PM10': 103,
-                  'PM2.5': 78,
-                  'PRES': 1010,
-                  'SO2': 15,
-                  'hour': 11,
-                  'month': 6,
-                  'wd': 6,
-                  'year': 2014}
+##Each column of norm_mean_dict is the mean of that column from the dataset used for training
+norm_mean_dict = {'CO': 1217.5056897538639,
+                  'DEWP': 2.399352604464814,
+                  'NO2': 50.12580481224956,
+                  'O3': 57.51304219175718,
+                  'PM10': 103.88501030337723,
+                  'PM2.5': 78.9816471093303,
+                  'PRES': 1010.743455396767,
+                  'SO2': 15.492473405838535,
+                  'hour': 11.579378935317687,
+                  'month': 6.472349742415569,
+                  'wd': 6.720778477389811,
+                  'year': 2014.7166571265025}
 #Each column of norm_stdev_dict is the standard deviation of that column from the dataset used for training
-norm_stdev_dict = {'CO': 1150,
-                   'DEWP': 13,
-                   'NO2': 34,
-                   'O3': 56,
-                   'PM10': 90,
-                   'PM2.5': 79,
-                   'PRES': 10,
-                   'SO2': 21,
-                   'hour': 6,
-                   'month': 3,
-                   'wd': 4,
-                   'year': 1}
+norm_stdev_dict = {'CO': 1150.1701750127093,
+                   'DEWP': 13.805683774980336,
+                   'NO2': 34.969247499380515,
+                   'O3': 56.676463334296535,
+                   'PM10': 90.84093498213319,
+                   'PM2.5': 79.71220652930842,
+                   'PRES': 10.440023888928256,
+                   'SO2': 21.055878728752777,
+                   'hour': 6.934095370818124,
+                   'month': 3.449073760899836,
+                   'wd': 4.523986069418892,
+                   'year': 1.1599380213839083}
 
 columns = ["year", "month", "hour", "PM2.5", "PM10", "SO2", "NO2", "CO", "O3", "PRES", "DEWP", "wd"]
 for column in columns:
