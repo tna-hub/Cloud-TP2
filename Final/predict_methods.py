@@ -90,9 +90,36 @@ data['station'] = labelencoder.fit_transform(data['station'])
 print('DONE')
 
 print('   +Applying feature scalling for data normalization...', end ="   ")
+#Each column of norm_mean_dict is the mean of that column from the dataset used for training
+norm_mean_dict = {'CO': 1217,
+                  'DEWP': 2,
+                  'NO2': 50,
+                  'O3': 57,
+                  'PM10': 103,
+                  'PM2.5': 78,
+                  'PRES': 1010,
+                  'SO2': 15,
+                  'hour': 11,
+                  'month': 6,
+                  'wd': 6,
+                  'year': 2014}
+#Each column of norm_stdev_dict is the standard deviation of that column from the dataset used for training
+norm_stdev_dict = {'CO': 1150,
+                   'DEWP': 13,
+                   'NO2': 34,
+                   'O3': 56,
+                   'PM10': 90,
+                   'PM2.5': 79,
+                   'PRES': 10,
+                   'SO2': 21,
+                   'hour': 6,
+                   'month': 3,
+                   'wd': 4,
+                   'year': 1}
+
 columns = ["year", "month", "hour", "PM2.5", "PM10", "SO2", "NO2", "CO", "O3", "PRES", "DEWP", "wd"]
 for column in columns:
-    data[column] = (data[column] - data[column].mean()) / data[column].std() + 3
+    data[column] = (data[column] - norm_mean_dict[column]) / norm_stdev_dict[column] + 3
 print('DONE')
 
 print('   +Removing unecessary columns No, day, RAIN, WSPM and station (correlation < 1%)...', end ="   "),
@@ -175,5 +202,3 @@ print('   +model2_pred: Predicted temperature using model 2')
 print('   +model3_pred: Predicted temperature using model 3')
 print("You can access the result file on s3 with this link https://{0}.s3.amazonaws.com/{1} or you can open the file {1} in your current directory".format(s3_bucket, output_name))
 df_res
-
-df_res["model3_pred"]
