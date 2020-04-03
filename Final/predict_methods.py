@@ -182,7 +182,7 @@ bins = [-30, 0, 10, 20, 30, 50]
 df_res["Actual"] = pd.cut(df_res["Actual"], bins = bins, include_lowest=True, labels = group_names)
 df_res["model1_pred"] = pd.cut(df_res["model1_pred"], bins = bins, include_lowest=True, labels = group_names)
 df_res["model2_pred"] = pd.cut(df_res["model2_pred"], bins = bins, include_lowest=True, labels = group_names)
-df_res["model2_pred"] = pd.cut(df_res["model3_pred"], bins = bins, include_lowest=True, labels = group_names)
+df_res["model3_pred"] = pd.cut(df_res["model3_pred"], bins = bins, include_lowest=True, labels = group_names)
 
 df_res.to_csv (output_name, index = False, header=True)
 print('DONE')
